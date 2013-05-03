@@ -22,12 +22,16 @@ gem 'psych'
 #end
 gem 'less-rails'
 
+gem "simple_form"
+gem 'twitter-bootstrap-rails'
+
+
 gem 'uglifier', '>= 1.0.3'
 gem 'therubyracer'
 
 gem 'execjs'
 gem 'jquery-rails'
-
+gem 'colorize'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
