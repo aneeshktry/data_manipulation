@@ -259,3 +259,5 @@
 .form-grid .form-grid-cell { float:left;padding:2px;display: table-cell;text-align: left;vertical-align: middle;margin-left: 5px;}
 .form-grid .form-grid-cell input {margin:0px;font-size:12px;font-weight:normal;font-family:arial;color:#4B4B4B;}
 .form-grid .form-grid-cell textarea {margin:0px;font-size:12px;font-weight:normal;font-family:arial;color:#4B4B4B;}
+
+.info-box {background-color: #E7F2DE;padding: 10px;color: #4b4b4b;border: solid 1px #bedca6;border-radius: 2px; -webkit-border-radius: 2px; -moz-border-radius: 2px;-o-border-radius: 2px;}

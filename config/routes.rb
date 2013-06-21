@@ -1,6 +1,7 @@
 DataManipulation::Application.routes.draw do
 
   root :to => 'home#home'
+  match 'home/extract'          =>'home#extract', :method =>:post, :as => :email_extract
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

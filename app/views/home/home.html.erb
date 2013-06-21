@@ -2,5 +2,12 @@
 # To change this template, choose Tools | Templates
 # and open the template in the editor.
 %>
-
-<%= "home.html" %>
+<body style="background-color: #808080;">
+  <div class="span12" >
+    <div class="info-box">You can either copy past the text or upload a text file that contains emails to be extracted</div>
+    <%= form_tag( email_extract_path, :id=>"EMAIL_Extract" , :style=>"margin-top:50px;" ) do %>
+      <label> Email </label>
+      <%= text_area_tag("text[email]", '' ,:id => "text_area" ) %>
+    <%  end %>
+  </div>
+</body>
