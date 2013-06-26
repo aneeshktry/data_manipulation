@@ -43,7 +43,7 @@
 .breadcrumb a {color:#4086a3;font-size: 12px;text-decoration: none;letter-spacing: 1px;font-weight: bold;}
 
 /* Margin Classes */
-
+.align-center {display: block;margin: 0px auto; text-align: center;}
 .margin-auto {margin:0px auto;}
 .margin-5{margin:5px;}
 .margin-10{margin:10px;}
@@ -261,3 +261,4 @@
 .form-grid .form-grid-cell textarea {margin:0px;font-size:12px;font-weight:normal;font-family:arial;color:#4B4B4B;}
 
 .info-box {background-color: #E7F2DE;padding: 10px;color: #4b4b4b;border: solid 1px #bedca6;border-radius: 2px; -webkit-border-radius: 2px; -moz-border-radius: 2px;-o-border-radius: 2px;}
+.form-box {background-color: #F0FFFF;padding: 10px;color: #4b4b4b;border: solid 1px #bedca6;border-radius: 2px; -webkit-border-radius: 2px; -moz-border-radius: 2px;-o-border-radius: 2px;}
