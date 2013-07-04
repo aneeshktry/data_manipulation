@@ -43,7 +43,7 @@
 .breadcrumb a {color:#4086a3;font-size: 12px;text-decoration: none;letter-spacing: 1px;font-weight: bold;}
 
 /* Margin Classes */
-.align-center {display: block;margin: 0px auto; text-align: center;}
+.align-center {display: block;margin: 0px auto;}
 .margin-auto {margin:0px auto;}
 .margin-5{margin:5px;}
 .margin-10{margin:10px;}

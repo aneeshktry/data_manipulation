@@ -25,6 +25,7 @@ gem 'less-rails'
 gem "simple_form"
 gem 'twitter-bootstrap-rails'
 
+gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
 
 gem 'uglifier', '>= 1.0.3'
 gem 'therubyracer'
