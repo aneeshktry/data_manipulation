@@ -10,7 +10,7 @@
   <%= form_tag( email_extract_path, :id=>"EMAIL_Extract" , :style=>"margin-top:50px;" ) do %>
     <%= render :partial => "/home/input" %>
 
-    <%= submit_tag "Extract", :class => "float-right btn btn-primary", :style=>"margin-right:315px;margin-top:20px", :onclick=>"$(this).button('loading');", "data-loading-text"=>"Saving" %>
+    <%= submit_tag "Extract", :class => "float-right btn btn-primary", :style=>"margin-right:315px;margin-top:20px", :onclick=>"$(this).button('loading');", "data-loading-text"=>"Extracting....." %>
 
   <%  end %>
   <div class="cl-50"></div>
