@@ -4,7 +4,7 @@ class HomeController < ApplicationController
     
   end
 
-  def extract
+  def text_extract
     #    puts "@"*100
     file_path = "#{Rails.root}/tmp/emails/emails.csv"
     text = params[:text]
@@ -21,6 +21,10 @@ class HomeController < ApplicationController
 #    sleep(10)
     send_file file_path, :type=>'text/csv' if File.exist?(file_path)
 #    File.delete(file_path) if File.exist?(file_path)
+  end
+
+  def file_extract
+    
   end
 
   def insert_into_csv(data_list,file_path)
