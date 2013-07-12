@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   require 'csv'
   def home
-    
+    @text_file = Assets.new
   end
 
   def text_extract
