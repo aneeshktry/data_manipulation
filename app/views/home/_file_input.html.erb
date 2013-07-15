@@ -2,5 +2,8 @@
 # To change this template, choose Tools | Templates
 # and open the template in the editor.
 %>
-<label style="margin-left: 250px;margin-top: 10px;font-size: 20px">Upload Text File</label>
-<%= file_field_tag("file",:style => "margin-top:-30px", :class=>"align-center") %>
+<%#*<label style="margin-left: 250px;margin-top: 10px;font-size: 20px">Upload Text File</label>%>
+<%#= file_field_tag :document, :style => "margin-top:-30px", :class=>"align-center" %>
+
+<% field = file_field_tag "document", :style=>"height:28px;background-color:#FFF;color:#4B4B4B;" %>
+<%= display_grid_row(@text_file, :document, field, false, "Upload Text File", true, false, "width-40", "width-65") %>
