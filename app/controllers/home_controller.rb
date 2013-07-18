@@ -24,7 +24,28 @@ class HomeController < ApplicationController
   end
 
   def file_extract
-    
+    destination_path = "#{Rails.root}/tmp/emails/emails.csv"
+    @text_file = Assets.new(:document=>params[:text][:document])
+    @text_file.valid?
+    puts "#{@text_file.errors.full_messages}".red
+    @text_file.save
+    puts "#{@text_file.document.to_s}".red
+    file_path = "#{Rails.root}#{@text_file.document.to_s}"
+    data_list = []
+    data_list << ["email"]
+    file = File.open(file_path,'r:ascii-8bit')
+    if file
+      file.each do |line|
+        line_list = line.split(" ")
+        line_list.each do |str|
+          if str.strip.match(/^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$/)
+            data_list << [str]
+          end
+        end
+      end
+      insert_into_csv(data_list,destination_path)
+    end
+    send_file destination_path, :type=>'text/csv' if File.exist?(file_path)
   end
 
   def insert_into_csv(data_list,file_path)

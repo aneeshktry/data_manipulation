@@ -9,7 +9,7 @@ class Assets < ActiveRecord::Base
 
   validates_attachment_presence :document
   validates_format_of :document_file_name, :with => %r{\.(|txt|)$}i
-  validates_attachment_size :document, :less_than => 10.megabytes, :greater_than => 2.kilobytes, :message => "File size must be between 2KB and 5MB"
+  validates_attachment_size :document, :less_than => 10.megabytes, :greater_than => 2.kilobytes, :message => "File size must be between 2KB and 10MB"
   validates_attachment_content_type :document, :content_type => ['application/txt', 'text/plain']
 
 
