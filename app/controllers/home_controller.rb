@@ -20,17 +20,17 @@ class HomeController < ApplicationController
     insert_into_csv(data_list,file_path)
 #    sleep(10)
     send_file file_path, :type=>'text/csv' if File.exist?(file_path)
-#    File.delete(file_path) if File.exist?(file_path)
+    File.delete(file_path) if File.exist?(file_path)
   end
 
   def file_extract
-    destination_path = "#{Rails.root}/tmp/emails/emails.csv"
     @text_file = Assets.new(:document=>params[:text][:document])
     @text_file.valid?
     puts "#{@text_file.errors.full_messages}".red
     @text_file.save
     puts "#{@text_file.document.to_s}".red
     file_path = "#{Rails.root}#{@text_file.document.to_s}"
+    destination_path = "#{Rails.root}/tmp/emails/#{@text_file.document_file_name.split(".")[0..-2].join(".")}.csv"
     data_list = []
     data_list << ["email"]
     file = File.open(file_path,'r:ascii-8bit')
@@ -44,8 +44,10 @@ class HomeController < ApplicationController
         end
       end
       insert_into_csv(data_list,destination_path)
+      @text_file.destroy
     end
-    send_file destination_path, :type=>'text/csv' if File.exist?(file_path)
+    send_file destination_path, :type=>'text/csv' if File.exist?(destination_path)
+    File.delete(destination_path) if File.exist?(destination_path)
   end
 
   def insert_into_csv(data_list,file_path)

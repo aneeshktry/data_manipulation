@@ -10,7 +10,7 @@
   <%= form_tag( email_text_extract_path, :id=>"EMAIL_TEXT_EXTRACT" , :style=>"margin-top:50px;" ) do %>
     <%= render :partial => "/home/text_input" %>
 
-    <%= submit_tag "Extract", :class => "float-right btn btn-primary", :style=>"margin-right:315px;margin-top:20px", :onclick=>"$(this).button('loading');", "data-loading-text"=>"Extracting....." %>
+    <%= submit_tag "Extract", :class => "float-right btn btn-primary", :style=>"margin-right:315px;margin-top:20px" %>
 
   <%  end %>
   <div class="cl-50"></div>
@@ -21,7 +21,7 @@
   <%= simple_form_for(@text_file, :as => "text", :url=>email_file_extract_path, :html => { :method => :post, :class => "form-horizontal", :multipart => true, :autocomplete => "off", :style=>"margin-left:250px;", :id=>"EMAIL_FILE_EXTRACT"}) do |f|  -%>
     <%= render :partial => "/home/file_input" ,:locals=>{:f=>f}%>
 
-    <%= submit_tag "Upload", :class => "float-right btn btn-primary", :style=>"margin-right:315px;margin-top:20px", :onclick=>"$(this).button('loading');", "data-loading-text"=>"Extracting....." %>
+    <%= submit_tag "Upload", :class => "float-right btn btn-primary", :style=>"margin-right:315px;margin-top:20px" %>
 
   <%  end %>
   <div class="cl-50"></div>
