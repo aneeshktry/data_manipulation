@@ -1,0 +1,20 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<div class="cl-10"></div>
+<div class="info-box">You can either copy past the text or upload a text file that contains emails to be extracted</div>
+<div class="cl-20"></div>
+<div class="cl-20"></div>
+<div class="form-box">
+  <%#= form_tag( email_file_extract_path, :id=>"EMAIL_FILE_EXTRACT" , :style=>"margin-top:50px;" ,:method => :post,:multipart => true, :class => "simple-form form-horizontal") do %>
+  <%= simple_form_for(@text_file, :as => "text", :url=>remove_duplicate_email_path, :html => { :method => :post, :class => "form-horizontal", :multipart => true, :autocomplete => "off", :style=>"margin-left:250px;", :id=>"EMAIL_FILE_EXTRACT"}) do |f|  -%>
+    <%= render :partial => "/remove_duplicates/file_input" ,:locals=>{:f=>f}%>
+
+    <%= submit_tag "Upload", :class => "float-right btn btn-primary", :style=>"margin-right:315px;margin-top:20px" %>
+
+  <%  end %>
+  <div class="cl-50"></div>
+</div>
+<div class="cl-60"></div>

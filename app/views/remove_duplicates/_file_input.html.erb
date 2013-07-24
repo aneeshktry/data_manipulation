@@ -1,0 +1,12 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+<%#*<label style="margin-left: 250px;margin-top: 10px;font-size: 20px">Upload Text File</label>%>
+<%#= file_field_tag :document, :style => "margin-top:-30px", :class=>"align-center" %>
+  <%# field = file_field_tag "document", :class => "align-center",:style=>"height:28px;background-color:#FFF;color:#4B4B4B;" %>
+  <%#= display_grid_row(@text_file, :document, field, false, "Upload Text File", true, false, "width-40", "width-65") %>
+
+<%= f.input :document, :as=>:file, :label =>"Upload CSV File(Source Data)", :required => false, :input_html=>{:style=>"border:solid 1px #ccc;width:455px;background-color: white;"} %>
+<div class="cl-30"></div>
+<%= f.input :document, :as=>:file, :label =>"Upload CSV File(Data to be Filtered)", :required => false, :input_html=>{:style=>"border:solid 1px #ccc;width:455px;background-color: white;"} %>

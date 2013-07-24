@@ -1,8 +1,13 @@
 DataManipulation::Application.routes.draw do
 
   root :to => 'home#home'
+
   match 'home/text_extract'          =>'home#text_extract', :method =>:post, :as => :email_text_extract
   match 'home/file_extract'          =>'home#file_extract', :method =>:post, :as => :email_file_extract
+
+
+  match 'remove_duplicates/remove_duplicates_home'          =>'remove_duplicates#remove_duplicates_home', :method =>:post, :as => :remove_duplicates_home
+  match 'remove_duplicates/remove_duplicate_email'          =>'remove_duplicates#remove_duplicate_email', :method =>:post, :as => :remove_duplicate_email
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
