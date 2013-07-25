@@ -1,7 +1,7 @@
 class CreateAssets < ActiveRecord::Migration
   def self.up
     create_table :assets do |t|
-
+      t.string   :type
       t.string   :document_file_name
       t.string   :document_content_type
       t.integer  :document_file_size
