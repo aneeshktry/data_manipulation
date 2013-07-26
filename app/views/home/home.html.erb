@@ -11,19 +11,31 @@
     <%= render :partial => "/home/text_input" %>
 
     <%= submit_tag "Extract", :class => "float-right btn btn-primary", :style=>"margin-right:315px;margin-top:20px" %>
-
   <%  end %>
+  <%= submit_tag "Clear", :class => "float-right btn btn-primary", :style=>"margin-right:15px;", :onclick => "clearText(1);" %>
   <div class="cl-50"></div>
 </div>
 <div class="cl-20"></div>
 <div class="form-box">
-  <%#= form_tag( email_file_extract_path, :id=>"EMAIL_FILE_EXTRACT" , :style=>"margin-top:50px;" ,:method => :post,:multipart => true, :class => "simple-form form-horizontal") do %>
+<%#= form_tag( email_file_extract_path, :id=>"EMAIL_FILE_EXTRACT" , :style=>"margin-top:50px;" ,:method => :post,:multipart => true, :class => "simple-form form-horizontal") do %>
   <%= simple_form_for(@text_file, :as => "text", :url=>email_file_extract_path, :html => { :method => :post, :class => "form-horizontal", :multipart => true, :autocomplete => "off", :style=>"margin-left:250px;", :id=>"EMAIL_FILE_EXTRACT"}) do |f|  -%>
     <%= render :partial => "/home/file_input" ,:locals=>{:f=>f}%>
 
     <%= submit_tag "Upload", :class => "float-right btn btn-primary", :style=>"margin-right:315px;margin-top:20px" %>
 
   <%  end %>
+  <%= submit_tag "Clear", :class => "float-right btn btn-primary", :style=>"margin-right:15px;", :onclick => "clearText(2);" %>
   <div class="cl-50"></div>
 </div>
 <div class="cl-60"></div>
+<script type="text/javascript">
+  function clearText(intValue)
+  {
+    if (intValue == 1){
+      document.getElementById("text_area").value = "";
+    }
+    else if (intValue == 2){
+      document.getElementById("file_input").value = "";
+    }
+  }
+</script>

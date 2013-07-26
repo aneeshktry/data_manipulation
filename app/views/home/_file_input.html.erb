@@ -7,4 +7,4 @@
   <%# field = file_field_tag "document", :class => "align-center",:style=>"height:28px;background-color:#FFF;color:#4B4B4B;" %>
   <%#= display_grid_row(@text_file, :document, field, false, "Upload Text File", true, false, "width-40", "width-65") %>
 
-<%= f.input :document, :as=>:file, :label =>"Upload Text File", :required => false, :input_html=>{:style=>"border:solid 1px #ccc;width:455px;background-color: white;"} %>
+<%= f.input :document, :as=>:file, :label =>"Upload Text File", :required => false,:id=>"file_input", :input_html=>{:style=>"border:solid 1px #ccc;width:455px;background-color: white;"} %>
